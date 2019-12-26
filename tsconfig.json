@@ -1,0 +1,13 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es6",
+    "sourceMap": true,
+    "removeComments": true,
+    "outDir": "./lib",
+  },
+  "types": [
+    "babylonjs",
+    "babylonjs-loaders"
+  ],
+}
