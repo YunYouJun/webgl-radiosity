@@ -8,6 +8,8 @@ Use a hemicube algorithm for radiosity rendering in WebGL.
 
 ### Install Dependencies
 
+You need install [yarn](https://www.yarnpkg.com/zh-Hans/) or [nodejs with npm](https://nodejs.org/en/) firstly.
+
 ```sh
 yarn global add live-server
 # or
