@@ -2,17 +2,11 @@
   "name": "webgl-radiosity",
   "version": "0.0.1",
   "description": "WebGL Radiosity",
-  "main": "index.html",
   "repository": "https://github.com/YunYouJun/webgl-radiosity.git",
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "babylonjs": "^4.0.3",
-    "babylonjs-loaders": "^4.0.3"
-  },
-  "devDependencies": {},
   "scripts": {
-    "dev": "tsc -w & live-server --watch='index.html,./lib'"
+    "dev": "live-server"
   }
 }
