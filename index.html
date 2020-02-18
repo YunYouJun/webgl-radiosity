@@ -6,63 +6,87 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>WebGL-Radiosity</title>
     <link rel="shortcut icon" href="./logo.png" />
-    <script type="text/javascript" src="./src/utils.js"></script>
-    <script type="text/javascript" src="./src/index.js"></script>
-    <script type="text/javascript" src="./src/renderable.js"></script>
-    <script type="text/javascript" src="./src/radiosity.js"></script>
-    <script type="text/javascript" src="./src/camera.js"></script>
-    <script type="text/javascript" src="./src/radCam.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@zeit-ui/style@latest/dist/style.css"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
     <!-- lib -->
     <script type="text/javascript" src="./lib/webgl-debug.js"></script>
     <script type="text/javascript" src="./lib/webgl-utils.js"></script>
     <script type="text/javascript" src="./lib/cuon-matrix.js"></script>
     <script type="text/javascript" src="./lib/cuon-utils.js"></script>
-    <style>
-      body {
-        text-align: center;
-      }
-      #glCanvas {
-        box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.2);
-      }
-      button {
-        border-radius: 20px;
-        padding: 8px 15px;
-        margin-top: 10px;
-        color: #fff;
-        background-color: #303133;
-        border-color: #303133;
-        cursor: pointer;
-        outline: none;
-        line-height: 1;
-        font-size: 14px;
-      }
-      kbd {
-        display: inline-block;
-        padding: 3px 5px;
-        font: 12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;
-        line-height: 10px;
-        color: #444d56;
-        vertical-align: middle;
-        background-color: #fafbfc;
-        border: solid 1px #d1d5da;
-        border-bottom-color: #c6cbd1;
-        border-radius: 3px;
-        box-shadow: inset 0 -1px 0 #d1c6c7;
-      }
-    </style>
   </head>
-  <body>
+  <body class="zi-main zi-layout">
     <h1>WebGL-Radiosity</h1>
-    <canvas id="glCanvas" width="800" height="512"></canvas>
-    <div class="control" style="margin-top: 20px;">
-      <input type="checkbox" id="display" value="display">Display
-      <br>
-      <label for="iterations">Iterations:</label>
-      <input id="iterations" type="number" name="iterations" value="10" oninput="init()">
-      <label for="subdivisions">Subdivisions:</label>
-      <input id="subdivisions" type="number" name="subdivisions" value="5" oninput="init()">
-      <button id="start" type="button" onclick="main()">Start</button>
-      <button id="control-status" type="button" onclick="toggleStatus()">Pause</button>
+    <p class="zi-note hint">
+      <span class="zi-note-type">HINT:</span>
+      Please use latest Chrome browser.
+    </p>
+    <div id="canvas-box" class="zi-card">
+      <canvas id="glCanvas" width="800" height="400"></canvas>
+    </div>
+
+    <div class="control">
+      <p class="zi-note alert">
+        <span class="zi-note-type">ALERT:</span>
+        Enable show will reduce the speed.
+      </p>
+
+      <p>
+        <span class="zi-checkbox-container" onclick="check(this)">
+          <span class="zi-toggle"></span>
+          <span class="zi-checkbox-label">Show Process</span>
+        </span>
+      </p>
+
+      <div>
+        <div class="zi-input-group prefix">
+          <span class="zi-label prefix">Iterations:</span>
+          <input
+            id="iterations"
+            class="zi-input small"
+            type="number"
+            name="iterations"
+            value="10"
+            oninput="init()"
+            placeholder="iterations"
+          />
+        </div>
+
+        <div class="zi-input-group prefix">
+          <span class="zi-label prefix">Subdivisions:</span>
+          <input
+            id="subdivisions"
+            class="zi-input small"
+            type="number"
+            name="subdivisions"
+            value="5"
+            oninput="init()"
+            placeholder="subdivisions"
+          />
+        </div>
+      </div>
+
+      <p>
+        <button
+          id="start"
+          class="zi-btn success small"
+          type="button"
+          onclick="main()"
+        >
+          Start
+        </button>
+
+        <button
+          id="control-status"
+          class="zi-btn primary small"
+          type="button"
+          onclick="toggleStatus()"
+        >
+          Pause
+        </button>
+      </p>
       <p>
         <kbd>W</kbd>
         <kbd>A</kbd>
@@ -75,5 +99,19 @@
         <kbd>→</kbd>
       </p>
     </div>
+
+    <a href="https://github.com/YunYouJun/webgl-radiosity" target="_blank">
+      <button class="zi-btn" href>
+        GitHub
+        <i class="suffix zi-icon-github"></i>
+      </button>
+    </a>
+    <script type="text/javascript" src="./src/utils.js"></script>
+    <script type="text/javascript" src="./src/ui.js"></script>
+    <script type="text/javascript" src="./src/index.js"></script>
+    <script type="text/javascript" src="./src/renderable.js"></script>
+    <script type="text/javascript" src="./src/radiosity.js"></script>
+    <script type="text/javascript" src="./src/camera.js"></script>
+    <script type="text/javascript" src="./src/radCam.js"></script>
   </body>
 </html>

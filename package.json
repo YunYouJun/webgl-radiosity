@@ -2,11 +2,37 @@
   "name": "webgl-radiosity",
   "version": "0.0.1",
   "description": "WebGL Radiosity",
-  "repository": "https://github.com/YunYouJun/webgl-radiosity.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YunYouJun/webgl-radiosity.git"
+  },
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "live-server"
+    "dev": "live-server",
+    "start": "http-server"
+  },
+  "homepage": "https://www.yunyoujun.cn/webgl-radiosity/",
+  "bugs": {
+    "url": "https://github.com/YunYouJun/webgl-radiosity/issues"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7"
+  },
+  "lint-staged": {
+    "*.{js}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

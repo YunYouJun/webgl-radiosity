@@ -19,7 +19,6 @@ let tempOrder = 0;
 function init() {
   window.iterations = parseInt(document.getElementById("iterations").value);
   window.subdivisions = parseInt(document.getElementById("subdivisions").value);
-  window.display = document.getElementById("display").checked;
   parseModelJson(modelFile);
 }
 
@@ -146,7 +145,7 @@ function genRadiosity(gl, radiosity, iterations) {
     }
   }
   if (i < iterations && run == true) {
-    if (window.display) {
+    if (config.show) {
       setTimeout(() => {
         console.log("Last iterations:", iterations - i);
         genRadiosity(gl, radiosity, iterations - i);
